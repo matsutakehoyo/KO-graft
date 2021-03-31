@@ -9,4 +9,4 @@ These include
 
 ## Table of Contents
 
-- Figure 1: [Retinal organoid fluorescence analysis](organoid fluorescence/README.md)
+- Figure 1: [Retinal organoid fluorescence analysis](organoid%20fluorescence)
