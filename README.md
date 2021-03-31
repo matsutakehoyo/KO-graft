@@ -9,4 +9,5 @@ These include
 
 ## Table of Contents
 
-- Figure 1: [Retinal organoid fluorescence analysis](organoid%20fluorescence)
+- Figure 1 and Supplemental Figure1: [Retinal organoid fluorescence analysis](organoid%20fluorescence)
+- Figure 1 and Supplemental Figure1 & 2 micro array analyis
