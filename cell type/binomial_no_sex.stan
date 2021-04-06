@@ -31,7 +31,7 @@ model {
   aml_s ~ normal(0,1);
   a_lin ~ normal(0,1);
   // a_lin_s ~ normal(0,1);
-  guess ~ beta(1,18);
+  guess ~ beta(1,9);
 
   for ( i in 1:n_obs ) {
     theta[i] = .5*guess + (1-guess)*inv_logit(
