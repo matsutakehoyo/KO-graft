@@ -1,13 +1,11 @@
 // Zero-Inflated Hierarchical Poisson model
 data {
 	int<lower=1> n_obs;
-	int<lower=1> n_sld;
 	int<lower=1> n_mus;
 	int<lower=1> n_lin;
 	int<lower=1> n_sex;
 	int<lower=1, upper=n_lin> obs2lin[n_obs];
 	int<lower=1, upper=n_mus> obs2mus[n_obs];
-	int<lower=1, upper=n_sld> obs2sld[n_obs];
 	int<lower=1, upper=n_sex> obs2sex[n_obs];
 	int<lower=0>  y[n_obs];
 	real<lower=0>  y_mean; // mean of non-zero counts
@@ -20,14 +18,10 @@ parameters {
 	real b0; 
 	vector[n_lin] a_lin;
 	vector[n_lin] b_lin;
-	// vector[n_sld] a_sld;
-	// vector[n_sld] b_sld;
 	vector[n_mus] a_mus;
 	vector[n_mus] b_mus;
 	vector[n_sex] a_sex;
 	vector[n_sex] b_sex;
-	// real<lower=0> a_sld_s;
-	// real<lower=0> b_sld_s;
 	real<lower=0> a_mus_s;
 	real<lower=0> b_mus_s;
 	matrix[n_lin,n_sex] a_lin_sex;
@@ -46,18 +40,14 @@ model {
 	guess ~ beta(1,9);
 	a0 ~ normal(logit(p_non_zero), 1);
 	b0 ~ normal(log(y_mean), 1); 
-	// a_sld_s ~ cauchy(0,1);
-	// b_sld_s ~ cauchy(0,1);
-	// a_sld ~ normal(0, a_sld_s);
-	// b_sld ~ normal(0, b_sld_s);	
-	a_mus_s ~ cauchy(0,1);
-	b_mus_s ~ cauchy(0,1);
+	a_mus_s ~ normal(0,1);
+	b_mus_s ~ normal(0,1);
 	a_mus ~ normal(0, a_mus_s);
 	b_mus ~ normal(0, b_mus_s);	
-	a_lin ~ cauchy(0,1);
-	b_lin ~ cauchy(0,1);
-	a_sex ~ cauchy(0, 1);
-	b_sex ~ cauchy(0, 1);
+	a_lin ~ normal(0,1);
+	b_lin ~ normal(0,1);
+	a_sex ~ normal(0, 1);
+	b_sex ~ normal(0, 1);
 
 	// interactions
 	for(l in 1:n_lin){	//index line
@@ -72,7 +62,6 @@ model {
 			a0 + 
 			a_lin[obs2lin[i]] + 
 			a_mus[obs2mus[i]] + 
-			// a_sld[obs2sld[i]] + 
 			a_sex[obs2sex[i]] +
 			a_lin_sex[obs2lin[i],obs2sex[i]]
 		);
@@ -81,7 +70,6 @@ model {
 			b0 + 
 			b_lin[obs2lin[i]] +
 			b_mus[obs2mus[i]] + 
-			// b_sld[obs2sld[i]] + 
 			b_sex[obs2sex[i]] +
 			b_lin_sex[obs2lin[i],obs2sex[i]]
 		);
@@ -107,8 +95,6 @@ generated quantities {
 	vector[n_sex] l_sex;	
 	vector[n_mus] t_mus;
 	vector[n_mus] l_mus;
-	// vector[n_sld] t_sld;
-	// vector[n_sld] l_sld;
 	matrix[n_lin, n_sex] t_lin_sex;
 	matrix[n_lin, n_sex] l_lin_sex;
 	matrix[n_lin, n_sex] m_lin_sex;
