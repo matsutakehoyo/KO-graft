@@ -8,3 +8,4 @@
 
 * **bernoulli_bwave.stan** is the stan script used to analyse the probability of b-wave. 
 
+* **bernoulli_RGC.stan** is  teh stan script used to analyse the probability of RGC response
