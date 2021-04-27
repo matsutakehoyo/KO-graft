@@ -67,27 +67,27 @@ transformed parameters {
 
 model {
 	a0 ~ normal(logit(p_non_zero), 1);
-	a_lin ~ normal(0,1);
+	a_lin ~ student_t(3,0,1);
 	a_mus ~ normal(0,mus_s);
-	mus_s ~ normal(0,1);
-	a_stm ~ normal(0,1);
-	a_cnd ~ normal(0,1);
-	a_tpl ~ normal(0,1);
-	a_dmg ~ normal(0,1);
-	a_tim ~ normal(0,1);
-	a_l7g ~ normal(0,1);
+	mus_s ~ gamma(1.64,0.32); //mode=2, sd=4
+	a_stm ~ student_t(3,0,1);
+	a_cnd ~ student_t(3,0,1);
+	a_tpl ~ student_t(3,0,1);
+	a_dmg ~ student_t(3,0,1);
+	a_tim ~ student_t(3,0,1);
+	a_l7g ~ student_t(3,0,1);
  	// interactions
  	for(i1 in 1:n_lin) { //index of lin
  		for(i2 in 1:3) { //index of cnd == tpl ==3
-			a_lin_cnd[i1, i2] ~ normal(0,1); 
-			a_lin_tpl[i1, i2] ~ normal(0,1);  			
+			a_lin_cnd[i1, i2] ~ student_t(3,0,1); 
+			a_lin_tpl[i1, i2] ~ student_t(3,0,1);  			
  		}
  	}
  	for(i1 in 1:n_lin){ //# of lin
  		for(i2 in 1:2){ //# of tim==stm==2
-			a_lin_stm[i1, i2] ~ normal(0,1); 
-			a_lin_tim[i1, i2] ~ normal(0,1); 
-			a_lin_l7g[i1, i2] ~ normal(0,1); 
+			a_lin_stm[i1, i2] ~ student_t(3,0,1); 
+			a_lin_tim[i1, i2] ~ student_t(3,0,1); 
+			a_lin_l7g[i1, i2] ~ student_t(3,0,1); 
  		}
  	}
 
