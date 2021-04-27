@@ -11,8 +11,8 @@ These include
 
 - Figure 1 and Supplemental Figure1: [Retinal organoid fluorescence analysis](organoid%20fluorescence)
 - Figure 1, Supplemental Figure1 and 2: [micro array analyis](organoid%20microarray)
-- Figure 2 and Supplemental Figure3: [Cell type analysis]()
-- Figure 3 and Supplemental Figure4: Synapse analysis
+- Figure 2 and Supplemental Figure3: [Cell type analysis](cell type analysis)
+- Figure 3 and Supplemental Figure4: [Synapse analysis](synapse)
 - Figure 4, Supplemental Figure 5, 6, and 7: 10ms light stimulus MEA (micro ERG and ganglion response)
 - Supplemental Figure 8: two photown Calcium imaging analysis
 - Supplemental Figure 9: population averages of light response (1sec stimulus)
