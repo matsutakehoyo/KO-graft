@@ -6,6 +6,6 @@
 
 * **summarise_peaks.R** aggregates all of the results processed with **analyse_mERG_MED64.R**. Experimental conditions (solutions, stimuli, graft type, time after transplantation) is obtained from the file path. 
 
-* **bernoulli_bwave.stan** is the stan script used to analyse the probability of b-wave. 
+* **bernoulli_bwave.stan** is the stan script used to analyse the probability of b-wave (figure4 and supplemental figure 6). 
 
-* **bernoulli_RGC.stan** is  teh stan script used to analyse the probability of RGC response
+* **bernoulli_RGC.stan** is  teh stan script used to analyse the probability of RGC response (figure4 and supplemental figure 7). 
