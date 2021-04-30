@@ -14,6 +14,6 @@ These include
 - Figure 2 and Supplemental Figure3: [Cell type analysis](cell%20type)
 - Figure 3 and Supplemental Figure4: [Synapse analysis](synapse)
 - Figure 4, Supplemental Figure 6, and 7: [analysis of 10ms light stimulus MEA (micro ERG and ganglion response)](mERG)
-- Supplemental Figure 8: two photown [Calcium imaging analysis]](two%20photon)
+- Supplemental Figure 8: two photown [Calcium imaging analysis](two%20photon)
 - Supplemental Figure 9: population averages of light response (1sec stimulus)
 - 
