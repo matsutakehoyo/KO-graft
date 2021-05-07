@@ -16,4 +16,4 @@ These include
 - Figure 4, Supplemental Figure 6 and 7: [analysis of 10ms light stimulus MEA (micro ERG and ganglion response)](mERG)
 - Supplemental Figure 8: [Calcium imaging analysis](two%20photon)
 - Figure 5, 6, Supplemental Figures 10 and 11: [analsyis of 1s light stimulus MEA (response and spontaneous)](RGC_1s)
-- 
+- Figure 7 and Supplemental Figure 12: [behaviour analysis](SAS)
