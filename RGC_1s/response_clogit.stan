@@ -51,25 +51,25 @@ model{
   
   a0 ~ normal(logit(prior),1); 
   // main effects
-  for (l in 1:n_lin) a_lin[l] ~ normal(0, 1);
-  for (a in 1:n_tim) a_tim[a] ~ normal(0, 1);
-  for (g in 1:n_l7g) a_l7g[g] ~ normal(0, 1);
-  for (t in 1:n_tpl) a_tpl[t] ~ normal(0, 1);
-  for (s in 1:n_stm) a_stm[s] ~ normal(0, 1);
-  for (d in 1:n_dmg) a_dmg[d] ~ normal(0, 1);
+  for (l in 1:n_lin) a_lin[l] ~ student_t(3,0,1);
+  for (a in 1:n_tim) a_tim[a] ~ student_t(3,0,1);
+  for (g in 1:n_l7g) a_l7g[g] ~ student_t(3,0,1);
+  for (t in 1:n_tpl) a_tpl[t] ~ student_t(3,0,1);
+  for (s in 1:n_stm) a_stm[s] ~ student_t(3,0,1);
+  for (d in 1:n_dmg) a_dmg[d] ~ student_t(3,0,1);
   for (u in 1:n_mus) a_mus[u] ~ normal(0, mus_s);
-  mus_s ~ normal(0,1);
-  spt ~ normal(0,1);
+  mus_s ~ gamma(1.64,0.32); //mode=2, sd=4
+  spt ~ student_t(3,0,1);
 
   // interactions
   for(l in 1:3){  //index line
     for(i in 1:3){ //index for cnd tpl stm
-      a_lin_tpl[l,i] ~ normal(0,1); 
-      a_lin_stm[l,i] ~ normal(0,1);       
+      a_lin_tpl[l,i] ~ student_t(3,0,1);
+      a_lin_stm[l,i] ~ student_t(3,0,1);
     }
     for (i in 1:n_tim) {
-      a_lin_tim[l,i] ~ normal(0,1); 
-      a_lin_l7g[l,i] ~ normal(0,1); 
+      a_lin_tim[l,i] ~ student_t(3,0,1);
+      a_lin_l7g[l,i] ~ student_t(3,0,1);
     }
   }
 
