@@ -1,5 +1,5 @@
 # KO-graft
-scripts for the analysis of the retinal organoid KO grafts. This is a collection of complementary scripts for the paper "Genetically engineered stem cell derived retinal grafts for improved retinal reconstruction after transplantation". We investigated the benefits of using genetically engineered retinal organoids for cell based therapies using mouse stem cell derived retinal organoids and retinal degeneration model mice (rd1). 
+Scripts for the analysis of the mouse retinal organoid KO grafts. This is a collection of complementary scripts for the paper "Genetically engineered stem cell derived retinal grafts for improved retinal reconstruction after transplantation". We investigated the benefits of using genetically engineered retinal organoids for cell based therapies using mouse stem cell derived retinal organoids and retinal degeneration model mice (rd1). 
 
 These include 
 
